@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 @Entity
 @Table(name = "travel-route")
@@ -25,7 +26,7 @@ public class TravelRoute {
     @JoinColumn(name = "destination_country_code", referencedColumnName = "code")
     private Country destinationCountry;
 
-    // Other fields like routeType, travelTime, etc.
-
-    // Getters & Setters
+    private String routeType;
+    private Integer durationInHours;
+    private Long distance;
 }
